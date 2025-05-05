@@ -1,0 +1,22 @@
+# src/main/resources/application.yml
+spring:
+  datasource:
+    url: jdbc:h2:mem:demo;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+    locations: classpath:db/migration           # Flyway migrations path :contentReference[oaicite:4]{index=4}
+
+# expose H2 console
+spring.h2.console.enabled: true
+spring.h2.console.path: /h2-console
+
+# Swagger/OpenAPI UI path (springdoc) :contentReference[oaicite:5]{index=5}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
